@@ -1,0 +1,23 @@
+--- mpd/meson.build	2022-01-30 06:09:15.657527109 -0500
++++ mpd/meson.build	2022-01-30 06:10:42.262421668 -0500
+@@ -203,12 +203,16 @@
+   '.',
+ )
+ 
+-boost_dep = dependency('boost', version: '>= 1.58')
+-if boost_dep.version() == '1.67'
++#boost_dep = dependency('boost', version: '>= 1.58')
++#if boost_dep.version() == '1.67'
+   # https://github.com/MusicPlayerDaemon/MPD/pull/384
+   # https://github.com/boostorg/lockfree/commit/12726cda009a855073b9bedbdce57b6ce7763da2
+-  warning('Your Boost version 1.67 is known to be buggy, and the MPD build will fail. Please upgrade to Boost 1.68 or later.')
+-endif
++#  warning('Your Boost version 1.67 is known to be buggy, and the MPD build will fail. Please upgrade to Boost 1.68 or later.')
++#endif
++boost_dep = [
++    compiler.find_library('boost_system'),
++    compiler.find_library('boost_filesystem'),
++]
+ 
+ log = static_library(
+   'log',

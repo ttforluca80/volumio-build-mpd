@@ -14,7 +14,7 @@ preconfigure_package() {
 
 configure_package() {
 	# fool configure test with 'ac_cv_func_malloc_0_nonnull=yes ac_cv_func_realloc_0_nonnull=yes' (ref: https://github.com/openvenues/libpostal/issues/134)
-	LT_SYS_LIBRARY_PATH="${STAGING_DIR}/${INSTALL_PREFIX}/lib" CC="${BUILD_CC}" CXX="${BUILD_CXX}" CFLAGS="${BUILD_CFLAGS}" CXXFLAGS="${BUILD_CFLAGS}" CPPFLAGS="${BUILD_CFLAGS}" LDFLAGS="${BUILD_LDFLAGS}" PKG_CONFIG_LIBDIR="${BUILD_PKG_CONFIG_LIBDIR}" PKG_CONFIG_SYSROOT_DIR="${BUILD_PKG_CONFIG_SYSROOT_DIR}" ac_cv_func_malloc_0_nonnull=yes ac_cv_func_realloc_0_nonnull=yes ./configure --prefix=${INSTALL_PREFIX} --with-rootprefix=${INSTALL_PREFIX} --with-sysvinit-path=${INSTALL_PREFIX}/etc/init.d --with-sysvrcnd-path=${INSTALL_PREFIX}/etc/rc.d --with-rc-local-script-path-start=${INSTALL_PREFIX}/etc/rc.local --build=${MACHTYPE} --host=${BUILD_TARGET} 
+	LT_SYS_LIBRARY_PATH="${STAGING_DIR}/${INSTALL_PREFIX}/lib" CC="${BUILD_CC}" CXX="${BUILD_CXX}" CFLAGS="${BUILD_CFLAGS}" CXXFLAGS="${BUILD_CFLAGS}" CPPFLAGS="${BUILD_CFLAGS}" LDFLAGS="${BUILD_LDFLAGS}" PKG_CONFIG_LIBDIR="${BUILD_PKG_CONFIG_LIBDIR}" PKG_CONFIG_SYSROOT_DIR="${BUILD_PKG_CONFIG_SYSROOT_DIR}" ac_cv_func_malloc_0_nonnull=yes ac_cv_func_realloc_0_nonnull=yes ./configure --prefix=${INSTALL_PREFIX} --with-rootprefix=${INSTALL_PREFIX} --with-libgcrypt-prefix=${INSTALL_PREFIX} --with-sysvinit-path=${INSTALL_PREFIX}/etc/init.d --with-sysvrcnd-path=${INSTALL_PREFIX}/etc/rc.d --with-rc-local-script-path-start=${INSTALL_PREFIX}/etc/rc.local --build=${MACHTYPE} --host=${BUILD_TARGET} 
 }
 
 make_package() {

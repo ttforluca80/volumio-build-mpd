@@ -1,0 +1,10 @@
+--- libmpc/mpcchap/CMakeLists.txt	2022-01-30 05:51:20.866738100 -0500
++++ libmpc/mpcchap/CMakeLists.txt	2022-01-30 05:53:49.928170508 -0500
+@@ -9,6 +8,7 @@
+ 
+ include_directories(${libmpc_SOURCE_DIR}/include)
+ include_directories(${CUEFILE_INCLUDE_DIR})
++include_directories(/home/pulsar/volumio-build-mpd/build/armv7)
+ 
+ link_directories(${libmpc_BINARY_DIR}/libmpcdec)
+ link_directories(${libmpc_BINARY_DIR}/libmpcenc)

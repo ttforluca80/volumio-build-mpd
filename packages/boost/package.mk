@@ -1,6 +1,6 @@
 PACKAGE_NAME="Boost C++ libraries"
 PACKAGE_VERSION="1.74.0"
-PACKAGE_SRC="https://dl.bintray.com/boostorg/release/1.74.0/source/boost_1_74_0.tar.gz"
+PACKAGE_SRC="https://boostorg.jfrog.io/artifactory/main/release/1.74.0/source/boost_1_74_0.tar.gz"
 
 configure_package() {
 	./bootstrap.sh

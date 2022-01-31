@@ -3,3 +3,5 @@
 04_link-order.patch
 add_subdir-objects.patch
 05_visibility.patch
+07_mpcgain.patch
+08_mpcchap.patch
